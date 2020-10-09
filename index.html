@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset='UTF-8'>
+  <title></title>
 
   <style>
-  .activeHeading {
-    color: firebrick;
-    font-size: 2em;
-    cursor: pointer;
-  }
-  
-  .nonActiveHeading {
-    color: cornflowerblue;
-    font-size: 4em;
-    cursor: pointer;
-  }
-  
-  
-  </style>
+    .hideElement {
+      visibility: hidden;
+    }
 
+    .showElement {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <div id='mainHeading' class="activeHeading">
-    Hi There
+  <div class="widget showElement">
+    <div class="mainHeading">
+      <h1>Hi there</h1>
+    </div>
+
+    <div class="subHeading">
+      My Amazing subheading...
+    </div>
+
   </div>
+  <button onclick="contentToggle()">Toggle Content</button>
 </body>
 <script>
-  const headimg = document.getElementById('mainHeading');
+  // const mainHeading = document.querySelector('.mainHeading');
+  // const headings = document.querySelectorAll('div');
+  const widget = document.querySelector('.widget');
 
-  heading.onclick = () => {
-    if (heading.classList.contains('activeHeading')) {
-      heading.classList.remove('activeHeading');
-      heading.classList.add('nonActiveHeading');
+  function contentToggle() {
+    if (widget.classList.contains('showElement')) {
+      widget.classList.remove('showElement');
+      widget.classList.add('hideElement');
     } else {
-      heading.classList.remove('nonActiveHeading');
-      heading.classList.add('activeHeading');
-
+      widget.classList.remove('hideElement');
+      widget.classList.add('showElement');
     }
   }
+
+  // function contentToggle() {
+  //   console.log(headings);
+  //   headings.forEach((heading) => {
+  //     if (heading.classList.contains('showElement')) {
+  //       heading.classList.remove('showElement');
+  //       heading.classList.add('hideElement');
+  //     } else {
+  //       heading.classList.remove('hideElement');
+  //       heading.classList.add('showElement');
+  //     }
+  //   });
+  // }
 </script>
 </html>
